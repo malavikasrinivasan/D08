@@ -20,20 +20,43 @@ def reverse_lookup_old(d, v):
 
 
 def reverse_lookup_new(d, v):
-    pass
+    matching_key_list = []
+    for key in d:
+        if d[key] == v:
+            matching_key_list.append(key)
+    return matching_key_list
 
 
 ###############################################################################
 # INSERT COMPLETED CODE FROM HW08_ch11_ex02a BELOW: ###########################
 ###############################################################################
+
+
+def histogram_new(s):
+    histogram = {}
+    for word in s:
+        histogram[word] = histogram.get(word, 0) + 1
+    return histogram
+
+def get_pledge_list():
+    """ Opens pledge.txt and converts to a list, each item is a word in
+    the order it appears in the original file. returns the list.
+    """
+    # Your code here.
+    with open("pledge.txt", "r") as f:
+        pledge = f.read()
+
+    pledge_list = pledge.split()
+    return pledge_list
 
 
 ###############################################################################
 # INSERT COMPLETED CODE FROM HW08_ch11_ex02a BELOW: ###########################
 ###############################################################################
 def main():   # DO NOT CHANGE BELOW
-    print(reverse_lookup_new(pledge_histogram, "1"))
-    print(reverse_lookup_new(pledge_histogram, "9"))
+    pledge_histogram = histogram_new(get_pledge_list())
+    print(reverse_lookup_new(pledge_histogram, 1))
+    print(reverse_lookup_new(pledge_histogram, 9))
     print(reverse_lookup_new(pledge_histogram, "Python"))
 
 if __name__ == '__main__':

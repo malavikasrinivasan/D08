@@ -28,15 +28,38 @@ def invert_dict_old(d):
 
 
 def invert_dict_new(d):
-    pass
-
+    inverse = dict()
+    for key in d:
+        val = d[key]
+        inverse[val] = inverse.get(val, []) + [key]
+    return inverse
 
 def print_hist_newest(d):
-    pass
+    d_size = len(d)
+    for i in range(0, d_size):
+        print(i, d.get(i, ''))
 
 ###############################################################################
 # INSERT COMPLETED CODE FROM HW08_ch11_ex02a BELOW: ###########################
 ###############################################################################
+
+def histogram_new(s):
+    histogram = {}
+    for word in s:
+        histogram[word] = histogram.get(word, 0) + 1
+    return histogram
+
+
+def get_pledge_list():
+    """ Opens pledge.txt and converts to a list, each item is a word in
+    the order it appears in the original file. returns the list.
+    """
+    # Your code here.
+    with open("pledge.txt", "r") as f:
+        pledge = f.read()
+
+    pledge_list = pledge.split()
+    return pledge_list
 
 
 ###############################################################################

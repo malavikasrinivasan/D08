@@ -4,12 +4,12 @@
 # Modify the variables so that all of the statements evaluate to True. ########
 ###############################################################################
 
-var1 = 
-var2 = 
-var3 = 
-var4 = 
-var5 = 
-var6 = 
+var1 = 1
+var2 = 'poodon'
+var3 = [3, 3, 3, 3, 3]
+var4 = (1, 2, "Hello, Python!")
+var5 = {'happy' : 'Me', 'tuna' : 7, 'egg' : 'salad'}
+var6 = 6.0
 
 ###############################################################################
 # Don't edit anything below this comment ######################################
@@ -35,6 +35,7 @@ print(var4[2] == "Hello, Python!")
 
 # dictionaries
 print(type(var5) is dict)
+# print(var5)
 print("happy" in var5)
 print(7 in var5.values())
 print(var5.get("egg") == "salad")

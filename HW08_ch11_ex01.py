@@ -9,8 +9,16 @@
 
 
 # Body
+def read_from_file(filename):
+    with open(filename, "r") as f:
+        file_contents = f.readlines()
+    return file_contents
+
+
 def store_to_dict():
-    pass
+    file_contents = read_from_file("words.txt")
+    words = {word.strip(): idx for idx, word in enumerate(file_contents)}
+    return words
 
 
 ###############################################################################
